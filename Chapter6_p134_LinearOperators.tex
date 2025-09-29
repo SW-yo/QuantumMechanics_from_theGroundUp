@@ -1,0 +1,69 @@
+\documentclass{ltjsarticle}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\title{第6章 線形演算子の成分表示（p.134）}
+\maketitle %タイトル表示コマンド
+
+\section*{表現行列のテンソル積（外積）表現}
+
+線形変換（演算子）$\hat{F}$ の\textbf{表現行列 $\mathbf{F}$} は、基底ベクトル $|i\rangle$ と $\langle j|$ の\textbf{テンソル積}（外積）を用いて、以下のように表されます。
+
+$$
+\mathbf{F} = \sum_{i=1}^{n} \sum_{j=1}^{n} F_{ij} |i\rangle \langle j|
+$$
+
+\hrule
+
+\subsection*{解説：表現の導出}
+
+この表現は、ディラック記法（ブラケット記法）を用いる物理学、特に量子力学で広く使われます。
+
+\subsubsection*{1. 表現行列成分の定義}
+
+まず、表現行列 $\mathbf{F}$ の成分 $F_{ij}$ は、線形演算子 $\hat{F}$ を基底ベクトル $|i\rangle$ と $|j\rangle$ で挟む（内積をとる）ことで定義されるスカラー値です。
+
+$$
+F_{ij} = \langle i|\hat{F}|j\rangle
+$$
+
+\subsubsection*{2. 単位演算子の完全性関係}
+
+ベクトル空間の基底 $\{|k\rangle\}$ が\textbf{完全系}をなすとき、\textbf{単位演算子 $\hat{I}$} は、基底のテンソル積（外積）の和で表されます。
+
+$$
+\hat{I} = \sum_{k=1}^{n} |k\rangle \langle k|
+$$
+
+\subsubsection*{3. $\hat{F}$ の展開}
+
+線形変換 $\hat{F}$ を $\hat{F} = \hat{I} \hat{F} \hat{I}$ と見なし、$\hat{I}$ の完全性関係を代入します（和の添字を区別するため $i$ と $j$ を使用）。
+
+$$
+\hat{F} = \left( \sum_{i=1}^{n} |i\rangle \langle i| \right) \hat{F} \left( \sum_{j=1}^{n} |j\rangle \langle j| \right)
+$$
+
+和の順序を変更し、中央部分をまとめると、
+
+$$
+\hat{F} = \sum_{i=1}^{n} \sum_{j=1}^{n} |i\rangle \underbrace{\langle i|\hat{F}|j\rangle}_{F_{ij}} \langle j|
+$$
+
+よって、線形演算子 $\hat{F}$（すなわち表現行列 $\mathbf{F}$）は、成分 $F_{ij}$ を係数とする\textbf{基底のテンソル積 $|i\rangle \langle j|$} の線形結合として表現されます。
+
+$$
+\mathbf{F} = \sum_{i=1}^{n} \sum_{j=1}^{n} F_{ij} |i\rangle \langle j|
+$$
+
+\subsubsection*{テンソル積 $|i\rangle \langle j|$ の意味}
+
+\textbf{テンソル積 $|i\rangle \langle j|$} は、ベクトル $|\nu\rangle$ を入力として受け取り、その $j$ 成分 $\nu_j = \langle j|\nu\rangle$ を取り出し、それを $i$ 方向 $|i\rangle$ に向ける行列（演算子）として機能します。
+
+$$
+(|i\rangle \langle j|)|\nu\rangle = |i\rangle (\langle j|\nu\rangle) = \nu_j |i\rangle
+$$
+
+$\mathbf{F}$ は、これらの基本的な「成分を取り出して方向を変える」操作を、係数 $F_{ij}$ で重み付けしながらすべて重ね合わせたもの、という意味を持ちます。
+
+\end{document}
