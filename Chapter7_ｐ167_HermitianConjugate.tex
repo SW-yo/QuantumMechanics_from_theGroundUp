@@ -1,0 +1,75 @@
+\documentclass{ltjsarticle}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\begin{document}
+
+行列 $F$ の\textbf{エルミート共役}（または共役転置）$F^\dagger$ の主な性質を以下に示します。
+
+\section*{エルミート共役の基本的な性質}
+
+以下の性質は、複素数 $c$（スカラー）、および適切なサイズの行列 $A$ と $B$ に対して成り立ちます。
+
+\subsection*{1. 二重共役}
+エルミート共役を2回繰り返すと、元の行列に戻ります。
+$$(F^\dagger)^\dagger = F$$
+
+\subsection*{2. スカラー倍}
+スカラー倍された行列のエルミート共役は、スカラーの複素共役と、元の行列のエルミート共役の積になります。
+$$(c F)^\dagger = c^* F^\dagger$$
+ここで $c^*$ はスカラー $c$ の\textbf{複素共役}です。
+
+\subsection*{3. 和}
+行列の和のエルミート共役は、それぞれのエルミート共役の和になります。
+$$(A + B)^\dagger = A^\dagger + B^\dagger$$
+
+\subsection*{4. 積}
+行列の積のエルミート共役は、\textbf{順序を逆にした}それぞれのエルミート共役の積になります。
+$$(A B)^\dagger = B^\dagger A^\dagger$$
+
+\subsection*{5. 逆行列 (可逆な場合)}
+可逆な行列 $F$ の場合、逆行列のエルミート共役は、エルミート共役の逆行列に等しくなります。
+$$(F^{-1})^\dagger = (F^\dagger)^{-1}$$
+
+\section*{特殊な行列との関連}
+
+\subsection*{エルミート行列 (Hermitian Matrix)}
+$F$ が自身のエルミート共役に等しい場合。
+$$F^\dagger = F$$
+
+\subsection*{ユニタリ行列 (Unitary Matrix)}
+$F$ のエルミート共役が $F$ の逆行列に等しい場合。
+$$F^\dagger = F^{-1} \quad \text{または} \quad F^\dagger F = F F^\dagger = I$$
+（$I$ は単位行列です。） \\
+
+
+
+
+% エルミート共役と複素共役の関係
+\section*{エルミート共役と複素共役の関係}
+
+エルミート共役 $\mathbf{A}^\dagger$ は、複素共役 $\mathbf{A}^*$ と転置 $\mathbf{A}^T$ を組み合わせた操作です。
+
+\begin{equation}
+    \mathbf{A}^\dagger = (\mathbf{A}^*)^T = (\mathbf{A}^T)^*
+\end{equation}
+
+ここで、
+\begin{itemize}
+    \item $\mathbf{A}^\dagger$: エルミート共役 (Hermitian Conjugate または Adjoint)
+    \item $\mathbf{A}^*$: 複素共役 (Complex Conjugate)
+    \item $(\cdots)^T$: 転置 (Transpose)
+\end{itemize}
+
+\vspace{1em} % 1行分のスペース
+
+\textbf{【スカラー（数）の場合】}
+
+行列 $\mathbf{A}$ が複素数 $z$ の場合、転置の操作がないため、エルミート共役と複素共役は等しくなります。
+
+\begin{equation}
+    \mathbf{z}^\dagger = \mathbf{z}^*
+\end{equation}
+
+\end{document}
