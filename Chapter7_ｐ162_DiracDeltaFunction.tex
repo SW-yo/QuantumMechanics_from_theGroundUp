@@ -1,0 +1,51 @@
+\documentclass{ltjsarticle}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\begin{document}
+
+\section*{演習問題 7.2 の証明：ディラックのデルタ関数の導関数}
+
+ディラックのデルタ関数の導関数 $\delta'(x-y)$ に関する積分 $I$ が $-f'(y)$ を満たすことを示します。
+
+$$I = \int_{-\infty}^{\infty} \delta'(x-y) f(x) \, dx$$
+
+\subsection*{1. 部分積分の適用と境界項の変換}
+
+部分積分の公式 $\int u \, dv = [uv] - \int v \, du$ を適用します。
+$u = f(x)$、 $dv = \delta'(x-y) \, dx$ とおくと、$du = f'(x) \, dx$、$v = \delta(x-y)$ となります。
+
+$$I = \left[ f(x) \delta(x-y) \right]_{-\infty}^{\infty} - \int_{-\infty}^{\infty} \delta(x-y) f'(x) \, dx$$
+
+ここで、第 1 項の境界項は、**広義積分**の定義により、積分区間の端点 $\pm\infty$ を極限で評価します。
+
+$$\left[ f(x)\delta(x-y) \right]_{-\infty}^{\infty} = \lim_{b\to\infty} f(b)\delta(b-y) - \lim_{a\to-\infty} f(a)\delta(a-y)$$
+
+\subsection*{2. 境界項の処理}
+
+ディラックのデルタ関数 $\delta(x-y)$ は $x=y$ 以外でゼロであるため、 $y$ が有限値である限り、 $\lim_{b\to\infty}$ や $\lim_{a\to-\infty}$ の評価点では $\delta$ はゼロになります。
+
+$$\left[ f(x)\delta(x-y) \right]_{-\infty}^{\infty} = \lim_{b\to\infty} f(b) \cdot 0 - \lim_{a\to-\infty} f(a) \cdot 0 = 0$$
+
+\subsection*{3. 残りの積分の処理}
+
+境界項が $0$ となったため、積分 $I$ は第 2 項のみとなります。
+
+$$I = - \int_{-\infty}^{\infty} \delta(x-y) f'(x) \, dx$$
+
+ここで、ディラックのデルタ関数の**サンプリング特性**（ふるい効果）
+$$\int_{-\infty}^{\infty} \delta(x-y) g(x) \, dx = g(y)$$
+を、$g(x) = f'(x)$ として適用します。
+
+$$\int_{-\infty}^{\infty} \delta(x-y) f'(x) \, dx = f'(y)$$
+
+\subsection*{4. 最終的な結果}
+
+この結果を $I$ の式に代入し、証明が完了します。
+
+$$I = - f'(y)$$
+
+$$\therefore \int_{-\infty}^{\infty} \delta'(x-y) f(x) \, dx = -f'(y)$$
+
+\end{document}
