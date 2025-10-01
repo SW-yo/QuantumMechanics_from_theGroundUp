@@ -1,0 +1,50 @@
+\documentclass{ltjsarticle}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{braket} % ケット・ブラ記法のために必要
+
+\begin{document}
+
+\section*{7.8 エルミート演算子の交換と同時固有状態の解説}
+
+この章は、量子力学における「\textbf{同時に測定可能な物理量}」という非常に重要な概念を扱っています。その鍵となるのは、2つの演算子が「\textbf{交換するかどうか}」です。
+
+\subsection*{1. 核心原理：交換条件}
+
+2つのエルミート演算子 $\hat{F}$ と $\hat{G}$ が\textbf{交換する}とは、それらの\textbf{交換子}がゼロになることです。
+
+\[
+[\hat{F}, \hat{G}] = \hat{F}\hat{G} - \hat{G}\hat{F} = \hat{0}
+\]
+
+\begin{itemize}
+    \item 物理的な意味：$\hat{F}$ と $\hat{G}$ に対応する物理量 $F$ と $G$ の測定順序を入れ替えても、系の状態に影響を与えないことを意味します。
+    \item 測定可能性：この条件が成立するとき、物理量 $F$ と $G$ は\textbf{同時に正確に測定可能}である、すなわち、\textbf{同時固有状態}が存在します。
+\end{itemize}
+
+\subsection*{2. 同時固有状態（同時対角化）}
+
+$\hat{F}$ と $\hat{G}$ が交換する場合、それらは共通の\textbf{固有ベクトル}を持つことができます。これを\textbf{同時固有ベクトル}と呼びます。
+
+\[
+\hat{F} \ket{\lambda, \mu} = \lambda \ket{\lambda, \mu} \quad \text{かつ} \quad \hat{G} \ket{\lambda, \mu} = \mu \ket{\lambda, \mu}
+\]
+
+\begin{itemize}
+    \item 状態 $\ket{\lambda, \mu}$ は、$\hat{F}$ の固有値 $\lambda$ と $\hat{G}$ の固有値 $\mu$ を\textbf{両方}確定的に持つ状態です。
+    \item 数学的意義：これは、$\hat{F}$ と $\hat{G}$ を表現する行列が、\textbf{共通の基底}（同時固有ベクトル）によって\textbf{同時に}対角化できることを意味します。
+\end{itemize}
+
+\subsection*{3. 非交換（非同時測定）との対比}
+
+もし $\hat{F}$ と $\hat{G}$ が交換しない（$[ \hat{F}, \hat{G} ] \ne \hat{0}$）場合、同時固有ベクトルは存在せず、\textbf{不確定性原理}が適用されます。
+
+\begin{itemize}
+    \item 例：位置演算子 $\hat{x}$ と運動量演算子 $\hat{p}$ の交換子は $i\hbar$ に比例します。
+    \[
+    [\hat{x}, \hat{p}] = i\hbar
+    \]
+    \item 結果：位置と運動量は同時に正確に測定できず、一方を正確に測定しようとすると、もう一方の不確かさが必ず増大します。
+\end{itemize}
+
+\end{document}

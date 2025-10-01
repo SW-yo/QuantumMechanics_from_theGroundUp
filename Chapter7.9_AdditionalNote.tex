@@ -1,0 +1,63 @@
+\documentclass{ltjsarticle}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{braket} % ケット・ブラ記法のために必要
+
+\begin{document}
+
+\section*{7.9 ベクトルの確率解釈の解説：なぜ確率が出てくるのか}
+
+7.9章は、量子力学における「\textbf{観測}」と「\textbf{確率}」の関係を数学的に確立する非常に重要なセクションです。中心的なアイデアは、\textbf{「状態ベクトルを展開すること」}と\textbf{「展開係数を確率と見なすこと」}です。
+
+\subsection*{1. 量子状態の展開（基底への射影）}
+
+量子状態 $\ket{\psi}$ は、観測したい物理量 $\hat{F}$ の固有ベクトル $\{ \ket{\lambda_n} \}$ を\textbf{基底}として、次のように展開できます。
+
+\[
+\ket{\psi} = \sum_{n} c_n \ket{\lambda_n} = \sum_{n} \braket{\lambda_n|\psi} \ket{\lambda_n}
+\]
+
+\begin{itemize}
+    \item \textbf{展開係数 $c_n$}: 状態 $\ket{\psi}$ を固有ベクトル $\ket{\lambda_n}$ に射影した成分であり、$c_n = \braket{\lambda_n|\psi}$ で与えられます。
+    \item \textbf{役割}: $c_n$ は、状態 $\ket{\psi}$ の中に、固有状態 $\ket{\lambda_n}$ がどれだけ含まれているか（どれだけ類似しているか）を示します。
+\end{itemize}
+
+\subsection*{2. 確率解釈の導入（ボルンの規則）}
+
+ここで\textbf{確率振幅}という概念が突然出てきますが、これは量子力学の\textbf{根本原理（公理）}として導入される解釈です。
+
+\subsubsection*{2.1. 確率振幅 $\braket{\lambda_n|\psi}$}
+
+展開係数 $c_n = \braket{\lambda_n|\psi}$ は「\textbf{確率振幅}」と呼ばれます。
+
+\[
+c_n = \braket{\lambda_n|\psi}
+\]
+
+この値そのものは確率ではありませんが、\textbf{確率の平方根}のような性質を持ちます。
+
+\subsubsection*{2.2. 観測確率 $|c_n|^2$}
+
+状態 $\ket{\psi}$ にある系に対して物理量 $\hat{F}$ を観測したとき、固有値 $\lambda_n$ が得られる\textbf{確率 $P_n$} は、確率振幅の\textbf{絶対値の2乗}として定義されます（ボルンの規則）。
+
+\[
+P_n = |c_n|^2 = |\braket{\lambda_n|\psi}|^2
+\]
+
+\begin{itemize}
+    \item \textbf{物理的意味}: \textbf{観測}という行為によって、状態 $\ket{\psi}$ は特定の固有状態 $\ket{\lambda_n}$ へと収縮（射影）します。その収縮が起こる「強さ」を、この確率が表しています。
+\end{itemize}
+
+\subsection*{3. 全確率の保存（ノルムの要請）}
+
+物理量 $\hat{F}$ の固有ベクトルが\textbf{正規直交基底}をなすとき、すべての固有値 $\lambda_n$ を観測する確率の合計は $1$ になります。
+
+\[
+\sum_{n} P_n = \sum_{n} |\braket{\lambda_n|\psi}|^2 = \braket{\psi|\psi} = 1
+\]
+
+\begin{itemize}
+    \item この条件は、\textbf{状態ベクトル $\ket{\psi}$ のノルム（長さ）が $1$ に規格化されている}（$\braket{\psi|\psi}=1$）という要請によって保証されます。これは、必ず何らかの結果が $100\%$ の確率で観測されるという物理的な要求に対応します。
+\end{itemize}
+
+\end{document}
