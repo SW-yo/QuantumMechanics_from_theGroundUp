@@ -1,0 +1,77 @@
+\documentclass{ltjsarticle}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{array} % 表の整形に必要なパッケージ
+\usepackage{braket} % \ket, \bra, \braket を定義するパッケージ
+\usepackage{bm} % 太字のギリシャ文字 (\mathbf{r} を \bm{r} に置き換えるため)
+\usepackage{longtable} % longtable 環境を定義するために必須
+
+\begin{document}
+
+\section*{基本的な量子力学用語} % 見出しを追加
+
+% 表のフォーマットを定義 (|l|p{幅}|p{幅}| : 縦線で区切られた3列。左寄せ/指定幅)
+\begin{longtable}{| >{\bfseries}l | p{6cm} | p{6cm} |}
+\hline
+\multicolumn{1}{|c|}{\textbf{用語}} & \multicolumn{1}{c|}{\textbf{簡潔な解説}} & \multicolumn{1}{c|}{\textbf{数式表現}} \\
+\hline
+\endhead % longtableのヘッダはここまで
+
+ケット (Ket) & 量子状態を表すベクトル。ヒルベルト空間の要素であり、縦ベクトルに対応し、列ベクトルとして扱われる。 & $$\ket{\psi}$$ \\
+\hline
+ブラ (Bra) & ケット $\ket{\psi}$ と対をなす、その複素共役転置（エルミート共役）$\ket{\psi}^\dagger$ に対応する行ベクトル。内積を定義する。 & $$\bra{\psi}$$ \\
+\hline
+スカラー & 大きさ（値）のみを持ち、方向を持たない量。座標系の回転に対して不変です。 & $$E, T, m$$ \\
+\hline
+ベクトル & 大きさと方向を持つ量。量子力学ではケット $\ket{\psi}$ や位置 $\mathbf{r}$ が該当します。 & $$\mathbf{A} \quad \text{または} \quad \ket{\psi}$$ \\
+\hline
+テンソル & スカラー（0階）とベクトル（1階）を一般化した高階の量。成分が複数の添字を持ちます。 & $$T_{ij}, \quad \text{または} \quad \mathbf{A} \otimes \mathbf{B}$$ \\
+\hline
+ノルム & ベクトルや状態の「長さ」を示す量。量子力学では状態の規格化条件として重要です。 & $$\Vert \mathbf{A} \Vert = \sqrt{\mathbf{A} \cdot \mathbf{A}}, \quad \Vert \ket{\psi} \Vert = \sqrt{\braket{\psi|\psi}}$$ \\
+\hline
+一次独立 & ベクトルの組 $\{ \ket{\psi_i} \}$ の線形結合がゼロとなるのが、係数 $c_i$ がすべてゼロの場合に限られること。 & $$\sum_{i} c_i \ket{\psi_i} = 0 \implies c_i = 0 \text{ (すべて)}$$ \\
+\hline
+基底 & あるベクトル空間内の任意のベクトルを、一意的に線形結合で表すことができる、一次独立なベクトルの組。 & $$\ket{\psi} = \sum_{i} c_i \ket{e_i}$$ \\
+\hline
+次元 & ベクトル空間を張るために必要な、一次独立なベクトルの最小数（基底の数）$N$。 & $$\dim(V) = N$$ \\
+\hline
+エルミート演算子 & 自身のエルミート共役($\dagger$)が自分自身と等しい演算子。量子力学で物理量に対応します。 & $$\hat{F} = \hat{F}^\dagger$$ \\
+\hline
+エルミート行列 & 自身の共役転置が自分自身と等しい行列。固有値は必ず実数です。 & $$H = H^\dagger$$ \\
+\hline
+対角化 & 行列 $H$ を固有ベクトル $P$ で変換し対角行列 $\Lambda$ にすること。あるいは、演算子 $\hat{F}$ をその固有ベクトル基底で表現したときに行列要素が対角成分のみを持つこと。 & $$\Lambda = P^{-1} H P, \quad \bra{\lambda_i}\hat{G}\ket{\lambda_j} = \mu_i \delta_{ij}$$ \\
+\hline
+行列要素 (演算子) & 演算子 $\hat{F}$ を、基底ベクトル $\{ \ket{\lambda_i} \}$ を用いて行列表示したときの $i$ 行 $j$ 列の成分 $g_{ij}$ の定義。 & $$f_{ij} = \bra{\lambda_i}\hat{F}\ket{\lambda_j}$$ \\
+\hline
+交換子 $[\hat{F}, \hat{G}]$ & 2つの演算子の作用順序を交換したときの差を表します。 & $$[\hat{F}, \hat{G}] = \hat{F}\hat{G} - \hat{G}\hat{F}$$ \\
+\hline
+交換 & 交換子がゼロになること。対応する物理量が同時に正確に測定可能です。 & $$[\hat{F}, \hat{G}] = 0$$ \\
+\hline
+固有値方程式 & 演算子 $\hat{F}$ が固有ベクトル $\ket{\psi}$ に作用すると、固有値 $\lambda$ 倍される関係。 & $$\hat{F} \ket{\psi} = \lambda \ket{\psi}$$ \\
+\hline
+スペクトル分解 & 演算子 $\hat{F}$ を、固有値 $\lambda_i$ と射影演算子 $\ket{\psi_i}\bra{\psi_i}$ を用いて表現する形式。 & $$\hat{F} = \sum_{i=1}^{n} \lambda_{i} \ket{\psi_{i}}\bra{\psi_{i}}$$ \\
+\hline
+完全性関係 & 固有ベクトル $\{ \ket{\lambda_i} \}$ が正規直交基底をなすとき、すべての固有状態の和は恒等演算子 $\hat{I}$ になります。 & $$\hat{I} = \sum_{i=1}^{n} \ket{\lambda_i}\bra{\lambda_i}$$ \\
+\hline
+内積 & 2つの状態 $\ket{\phi}, \ket{\psi}$ からスカラー値を得る演算。直交性やノルム（長さ）を定義します。 & $$\braket{\phi|\psi} = \int \phi^{*}(\mathbf{r}) \psi(\mathbf{r}) \, d\tau$$ \\
+\hline
+外積 (ケット・ブラ) & 状態 $\ket{\psi}$ から $\ket{\phi}$ への射影演算子（またはその要素）を構成します。 & $$\hat{P} = \ket{\psi}\bra{\phi}$$ \\
+\hline
+ベクトル積 & 3次元ベクトル $\mathbf{A}$ と $\mathbf{B}$ から、両者に垂直な新しいベクトル $\mathbf{C}$ を返す演算。 & $$\mathbf{A} \times \mathbf{B} = \mathbf{C}$$ \\
+\hline
+$\delta$ 関数 & ディラックのデルタ関数。積分されたときに、任意の関数 $f(x)$ の特定点での値を取り出します。 & $$\int_{-\infty}^{\infty} f(x) \delta(x-a) dx = f(a)$$ \\
+\hline
+クロネッカーの$\delta$ & 2つの離散的な添字 $i$ と $j$ が等しいときに $1$、等しくないときに $0$ となる関数。ベクトルの直交性を示す。 & $$\delta_{ij} = \begin{cases} 1 & (i=j) \\ 0 & (i \ne j) \end{cases}$$ \\
+\hline
+正規直交基底 & 互いに直交し（内積が 0）、かつ長さが $1$（内積が 1）のベクトルの組 $\{ \ket{e_i} \}$。 & $$\braket{e_i|e_j} = \delta_{ij}, \quad \delta_{ij} = \begin{cases} 1 & (i=j) \\ 0 & (i \ne j) \end{cases}$$ \\
+\hline
+確率振幅 & 状態 $\ket{\psi}$ を、観測量 $\hat{F}$ の固有状態 $\ket{\lambda_i}$ に射影した成分。その絶対値の2乗が確率となる。 & $$c_i = \braket{\lambda_i|\psi}$$ \\
+\hline
+確率 & 物理量 $\hat{F}$ を観測したとき、特定の固有値 $\lambda_i$ が得られる可能性の度合い（ボルンの規則）。 & $$P_i = |\braket{\lambda_i|\psi}|^2$$ \\
+\hline
+観測量 & 測定によって得られる物理的な量（エネルギー、運動量など）。必ずエルミート演算子 $\hat{F}$ に対応する。 & $$\hat{F} = \hat{F}^\dagger$$ \\
+\hline
+\end{longtable}
+
+\end{document}
