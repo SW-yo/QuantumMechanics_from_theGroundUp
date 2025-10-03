@@ -58,6 +58,10 @@
 \hline
 固有値方程式 & 演算子 $\hat{F}$ が固有ベクトル $\ket{\psi}$ に作用すると、固有値 $\lambda$ 倍される関係。 & $$\hat{F} \ket{\psi} = \lambda \ket{\psi}$$ \\
 \hline
+\textbf{固有状態} & 観測量の固有値 $\lambda$ に対応する状態ベクトル $\ket{\psi}$ のこと。物理量を測定する直前の状態。 & $$\ket{\psi}$$ \\
+\hline
+\textbf{固有値} & 固有値方程式を満たすスカラー $\lambda$ のこと。測定される物理量の候補となる値（測定値として観測される）。 & $$\lambda$$ \\
+\hline
 スペクトル分解 & 演算子 $\hat{F}$ を、固有値 $\lambda_i$ と射影演算子 $\ket{\psi_i}\bra{\psi_i}$ を用いて表現する形式。 & $$\hat{F} = \sum_{i=1}^{n} \lambda_{i} \ket{\psi_{i}}\bra{\psi_{i}}$$ \\
 \hline
 完全性関係 & 固有ベクトル $\{ \ket{\lambda_i} \}$ が正規直交基底をなすとき、すべての固有状態の和は恒等演算子 $\hat{I}$ になります。 & $$\hat{I} = \sum_{i=1}^{n} \ket{\lambda_i}\bra{\lambda_i}$$ \\
@@ -77,6 +81,10 @@ $\delta$ 関数 & ディラックのデルタ関数。積分されたときに�
 確率振幅 & 状態 $\ket{\psi}$ を、観測量 $\hat{F}$ の固有状態 $\ket{\lambda_i}$ に射影した成分。その絶対値の2乗が確率となる。 & $$c_i = \braket{\lambda_i|\psi}$$ \\
 \hline
 確率 & 物理量 $\hat{F}$ を観測したとき、特定の固有値 $\lambda_i$ が得られる可能性の度合い（ボルンの規則）。 & $$P_i = |\braket{\lambda_i|\psi}|^2$$ \\
+\hline
+\textbf{期待値} & 測定を多数回行った場合の、観測量 $\hat{F}$ の測定値の平均値。量子状態 $\ket{\psi}$ の演算子 $\hat{F}$ に対する予測値。 & $$\braket{\hat{F}} = \bra{\psi} \hat{F} \ket{\psi} = \sum_{i} \lambda_i P_i$$ \\
+\hline
+\textbf{測定値} & 実際に観測によって得られる値。観測量 $\hat{F}$ の固有値 $\lambda_i$ のいずれかになる。 & $$\lambda_i \text{ (固有値のいずれか)}$$ \\
 \hline
 観測量 & 測定によって得られる物理的な量（エネルギー、運動量など）。必ずエルミート演算子 $\hat{F}$ に対応する。 & $$\hat{F} = \hat{F}^\dagger$$ \\
 \hline
