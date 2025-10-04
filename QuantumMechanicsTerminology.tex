@@ -90,4 +90,43 @@ $\delta$ 関数 & ディラックのデルタ関数。積分されたときに�
 \hline
 \end{longtable}
 
+\section*{固有値と固有状態}
+
+\subsection*{1. 数学的な意味}
+\begin{itemize}
+    \item 固有値 $\lambda$ は、\textbf{特性方程式} $\det(U - \lambda I) = 0$ の解である $\lambda$ の $N$ 次方程式の解です。
+    \item \textbf{固有方程式}は $U \ket{\psi} = \lambda \ket{\psi}$ です。
+    \item 固有状態 $\ket{\psi}$ は、固有値 $\lambda$ を固有方程式に代入して得られる\textbf{同次連立方程式} $(U - \lambda I) \ket{\psi} = 0$ の解です。
+\end{itemize}
+
+\subsection*{2. 物理的な意味}
+\begin{itemize}
+    \item 固有値 $\lambda$ は、観測される物理量の\textbf{可能な測定値}（固有値）を表します。
+    \item 固有状態 $\ket{\psi}$ は、観測量が $\lambda$ に\textbf{確定している状態}を表します。
+    \item 観測量を測定すると、系は対応する固有状態に\textbf{「収縮」}（状態の射影）します。
+    \item 観測量は\textbf{エルミート演算子}に対応するため、固有値は\textbf{実数}となり、物理的に意味のある値となります。
+\end{itemize}
+
+
+\section*{期待値}
+
+\subsection*{1. 期待値の計算}
+\begin{itemize}
+    \item 期待値 $\langle \hat{F} \rangle$ は、\textbf{状態 $\ket{\psi}$ }における観測量 $\hat{F}$ の\textbf{平均測定値}を表します。
+    \item 期待値は、\textbf{定義式} $\langle \hat{F} \rangle = \bra{\psi} \hat{F} \ket{\psi}$ で計算されます。
+    \item 期待値は、固有値 $f_i$ とその確率 $P_i$ を用いた\textbf{加重平均}として計算されます。： $\langle \hat{F} \rangle = \sum_i f_i P_i$
+\end{itemize}
+
+\subsection*{2. 物理的な意味と性質}
+\begin{itemize}
+    \item 期待値は、観測量の測定結果の\textbf{統計的な平均}であり、量子力学における\textbf{物理量の予測値}として重要です。
+    \item 期待値は、系の状態 $\ket{\psi}$ に完全に依存します。
+\end{itemize}
+
+\subsection*{3. ブロッホ球における期待値}
+\begin{itemize}
+    \item スピン1/2系の状態はブロッホ球上の点で表されます。
+    \item パウリ演算子 $\sigma_x, \sigma_y, \sigma_z$ の期待値は、ブロッホ球上の\textbf{状態ベクトルの座標} $\vec{r} = (\langle \sigma_x \rangle, \langle \sigma_y \rangle, \langle \sigma_z \rangle)$ に対応します。
+\end{itemize}
+
 \end{document}
